@@ -52,9 +52,10 @@ const AboutMe = () => {
     skills: [
       { name: "Python, Java, C/C++", level: 90, color: "#4f46e5" },
       { name: "Git, Jira", level: 85, color: "#10b981" },
-      { name: "Backend developement", level: 80, color: "#f59e0b" },
-      { name: "Computer Architecture/Robotics", level: 75, color: "#3b82f6" },
-      { name: "Embedded Software", level: 70, color: "#06b6d4" }
+      { name: "Backend developement", level: 70, color: "#f59e0b" },
+      { name: "Computer Architecture", level: 75, color: "#3b82f6" },
+      { name: "Embedded Software", level: 70, color: "#06b6d4" },
+      { name: "Robotics", level: 70, color: "#06b6d4" }
     ],
 
     interests: [
