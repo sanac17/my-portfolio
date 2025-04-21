@@ -60,9 +60,9 @@ const AboutMe = () => {
 
     interests: [
       { name: "Robotics", icon: "🤖" },
-      { name: "Formula 1", icon: "🚗" },
-      { name: "Computer Architecture", icon: "💻" },
-      { name: "Embedded Systems", icon: "🔌" }
+      { name: "Formula 1", icon: "🏎️" },
+      { name: "Piano", icon: "🎹" },
+      { name: "Hiking", icon: "🥾" }
     ],
 
     contact: {
