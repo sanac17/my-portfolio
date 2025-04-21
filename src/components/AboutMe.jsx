@@ -20,7 +20,11 @@ const AboutMe = () => {
   // Your personal information - customize this
   const personalInfo = {
     name: "Sana Chawla",
-    bio: "Hello ! My name is Sana Chawla and I am currently an undergraduate Computer Science and ECE student.",
+    bio: "Hello! My name is Sana Chawla and I am currently an undergraduate Computer Science and ECE student. \
+    I'm passionate about developing innovative solutions at the intersection of software and hardware systems. \
+    My academic journey has equipped me with strong foundations in programming, computer architecture, and \
+    embedded systems design. Outside of my technical pursuits, \
+    I find balance through music, outdoor adventures, and following Formula 1 racing.",
 
     experience: [
       {
@@ -207,6 +211,13 @@ const AboutMe = () => {
         {/* Intro Section */}
         <section id="intro" className="section">
           <div className="intro-content">
+            <div className="profile-container">
+              <img
+                src={process.env.PUBLIC_URL + '/IMG_0980.JPG'}
+                alt="Sana Chawla"
+                className="profile-image"
+              />
+            </div>
             <h1 className="name">{personalInfo.name}</h1>
             <div className="name-underline"></div>
             <h2 className="bio">{personalInfo.bio}</h2>

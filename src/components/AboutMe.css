@@ -218,6 +218,28 @@
   color: #f1f5f9;
 }
 
+.profile-container {
+  margin: 0 auto 30px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid transparent;
+  background: linear-gradient(90deg, #4f46e5, #10b981) border-box;
+  mask-composite: exclude;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-image:hover {
+  transform: scale(1.05);
+}
+
 /* Responsive Design for Project Page */
 @media (max-width: 768px) {
   .project-title {
