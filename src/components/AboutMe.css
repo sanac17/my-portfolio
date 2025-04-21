@@ -1,20 +1,29 @@
 /* View Details Button */
 .view-details-button {
-  background: none;
+  background: linear-gradient(90deg, #4f46e5, #10b981);
   border: none;
-  font-size: 0.85rem;
-  color: #8ee4c8;
+  font-size: 0.9rem;
+  color: white;
   cursor: pointer;
-  margin-left: 10px;
-  padding: 3px 8px;
-  border-radius: 4px;
+  margin-left: 15px;
+  padding: 6px 14px;
+  border-radius: 20px;
   transition: all 0.3s;
-  text-decoration: underline;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 500;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .view-details-button:hover {
-  background-color: rgba(16, 185, 129, 0.1);
-  color: #4ade80;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  opacity: 0.95;
+}
+
+.view-details-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Project Page Styles */

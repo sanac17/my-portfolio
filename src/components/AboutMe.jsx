@@ -7,6 +7,16 @@ const AboutMe = () => {
   const [activeSkill, setActiveSkill] = useState(null);
   const [showPiTamagotchi, setShowPiTamagotchi] = useState(false);
 
+  // Add this near your other useEffect hooks
+  useEffect(() => {
+    if (showPiTamagotchi) {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+  }, [showPiTamagotchi]);
+
   // Handle scroll for effects
   useEffect(() => {
     const handleScroll = () => {
