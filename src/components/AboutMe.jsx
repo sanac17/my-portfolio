@@ -6,6 +6,9 @@ const AboutMe = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [activeSkill, setActiveSkill] = useState(null);
   const [showPiTamagotchi, setShowPiTamagotchi] = useState(false);
+  // Inside your AboutMe component, add this state
+  const [isNavVisible, setIsNavVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   // Add this near your other useEffect hooks
   useEffect(() => {
@@ -26,6 +29,8 @@ const AboutMe = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+
 
   // Your personal information - customize this
   const personalInfo = {
@@ -204,14 +209,36 @@ const AboutMe = () => {
     return <PiTamagotchiProject />;
   }
 
+
   return (
     <div className="portfolio">
+      {/* Navigation Header */}
+      {/* Navigation Header - remove the conditional class */}
+      <header className="nav-header">
+        <div className="nav-container">
+          <div className="nav-logo">SC</div>
+          <nav className="nav-links">
+            <a href="#intro">Home</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a
+              href={process.env.PUBLIC_URL + '/SanaChawla_Resume_pdf_main.pdf'}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nav-link"
+            >
+              CV
+            </a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+      </header>
       {/* Fixed Navigation Dots */}
       <div className="nav-dots">
         <a href="#intro" className="nav-dot"></a>
         <a href="#experience" className="nav-dot"></a>
         <a href="#skills" className="nav-dot"></a>
-        <a href="#interests" className="nav-dot"></a>
+        <a href="#cv" className="nav-dot"></a>
         <a href="#contact" className="nav-dot"></a>
       </div>
 
