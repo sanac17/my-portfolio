@@ -1,0 +1,20 @@
+/* Create a file called PiTamagotchi.css in your src/components folder */
+/* Copy all the CSS from the HTML version, but remove the body and general styles that might conflict */
+
+/* Project Header */
+.project-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.project-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #4f46e5, #10b981);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ... add the rest of the CSS from the HTML version ... */

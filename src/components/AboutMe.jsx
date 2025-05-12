@@ -9,6 +9,7 @@ const AboutMe = () => {
   // Inside your AboutMe component, add this state
   const [isNavVisible, setIsNavVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [activeExpCard, setActiveExpCard] = useState(null);
 
   // Add this near your other useEffect hooks
   useEffect(() => {
@@ -30,12 +31,10 @@ const AboutMe = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-
-
   // Your personal information - customize this
   const personalInfo = {
     name: "Sana Chawla",
-    bio: "Hello! My name is Sana Chawla and I am currently an undergraduate Computer Science and ECE student. \
+    bio: "I am an undergraduate Computer Science and ECE student. \
     I'm passionate about developing innovative solutions at the intersection of software and hardware systems. \
     My academic journey has equipped me with strong foundations in programming, computer architecture, and \
     embedded systems design. Outside of my technical pursuits, \
@@ -43,28 +42,46 @@ const AboutMe = () => {
 
     experience: [
       {
-        year: "April 2025 - Present",
+        id: 1,
+        year: "April 2025 - May 2025",
         role: "Team Member",
         company: "Sign Language Glove: Class Project",
-        description: "Creating a glove that can identify ASL alphabets."
+        description: "Created a glove that can detect ASL alphabets.",
+        icon: "🧤",
+        className: "exp-1",
+        skills: ["Hardware", "Signal Processing", "Sensors", "Accessibility"],
+        hasDetails: true
       },
       {
+        id: 2,
         year: "May 2024 - Aug. 2024",
         role: "Software Engineering Intern",
         company: "Cisco",
-        description: "Developed a full-stack web app using React, NodeJS and Python."
+        description: "Developed a full-stack web app using React, NodeJS and Python.",
+        icon: "🌐",
+        className: "exp-2",
+        skills: ["React", "NodeJS", "Python", "CI/CD", "API Development"]
       },
       {
+        id: 3,
         year: "April 2024 - May 2024",
         role: "Team Member",
         company: "Pi-Tamagotchi: Class project",
-        description: "Developed a Tamagotchi inspired game on a Raspberry Pi using Python."
+        description: "Developed a Tamagotchi inspired game on a Raspberry Pi using Python.",
+        icon: "🎮",
+        className: "exp-3",
+        skills: ["Python", "Raspberry Pi", "GPIO", "Pygame", "IoT"],
+        hasDetails: true
       },
       {
+        id: 4,
         year: "May 2023 - Aug. 2023",
         role: "Software Engineering Intern",
         company: "Safe Security",
-        description: "Worked on fine-tuning of LLMs in Amazon SageMaker."
+        description: "Worked on fine-tuning of LLMs in Amazon SageMaker.",
+        icon: "🔒",
+        className: "exp-4",
+        skills: ["AWS", "SageMaker", "LLMs", "Python", "Machine Learning"]
       }
     ],
 
@@ -77,18 +94,15 @@ const AboutMe = () => {
       { name: "Robotics", level: 70, color: "#06b6d4" }
     ],
 
-    interests: [
-      { name: "Robotics", icon: "🤖" },
-      { name: "Formula 1", icon: "🏎️" },
-      { name: "Piano", icon: "🎹" },
-      { name: "Hiking", icon: "🥾" }
-    ],
-
     contact: {
       email: "sc2347@cornell.edu",
       linkedin: "https://www.linkedin.com/in/sanachawla/",
       github: "https://github.com/sanac17"
     }
+  };
+
+  const handleExpCardClick = (id) => {
+    setActiveExpCard(activeExpCard === id ? null : id);
   };
 
   // Pi-Tamagotchi project details page
@@ -209,11 +223,9 @@ const AboutMe = () => {
     return <PiTamagotchiProject />;
   }
 
-
   return (
     <div className="portfolio">
       {/* Navigation Header */}
-      {/* Navigation Header - remove the conditional class */}
       <header className="nav-header">
         <div className="nav-container">
           <div className="nav-logo">SC</div>
@@ -233,6 +245,7 @@ const AboutMe = () => {
           </nav>
         </div>
       </header>
+
       {/* Fixed Navigation Dots */}
       <div className="nav-dots">
         <a href="#intro" className="nav-dot"></a>
@@ -244,7 +257,6 @@ const AboutMe = () => {
 
       {/* Main Content Container */}
       <div className="container">
-
         {/* Intro Section */}
         <section id="intro" className="section">
           <div className="intro-content">
@@ -265,31 +277,59 @@ const AboutMe = () => {
           </div>
         </section>
 
-        {/* Experience Section */}
-        <section id="experience" className="section">
-          <h2 className="section-title gradient-text">Experiences</h2>
+        {/* Experience Section - NEW PICTORIAL VERSION */}
+        <section id="experience" className="section experiences-section">
+          <h2 className="section-title gradient-text">My Journey</h2>
 
-          <div className="timeline">
+          <div className="timeline-vertical">
             {personalInfo.experience.map((exp, index) => (
-              <div key={index} className="timeline-item" style={{
-                opacity: 1 - (index * 0.1)
-              }}>
-                <div className="timeline-dot"></div>
-                <span className="timeline-year">{exp.year}</span>
-                <h3 className="timeline-role">{exp.role}</h3>
-                <h4 className="timeline-company">
-                  {exp.company}
-                  {/* Add View Details button for Pi-Tamagotchi project */}
-                  {exp.company.includes("Pi-Tamagotchi") && (
+              <div key={exp.id} className="exp-timeline-item">
+                {/* Timeline dot */}
+                <div className="exp-timeline-dot"></div>
+
+                {/* Date badge */}
+                <div className="exp-timeline-date">{exp.year}</div>
+
+                {/* Experience card */}
+                <div
+                  className={`exp-card ${exp.className}`}
+                  onClick={() => handleExpCardClick(exp.id)}
+                  style={{
+                    transform: activeExpCard === exp.id ? 'translateY(-8px)' : 'none',
+                    boxShadow: activeExpCard === exp.id ? '0 12px 24px rgba(0, 0, 0, 0.15)' : '0 4px 15px rgba(0, 0, 0, 0.1)'
+                  }}
+                >
+                  {/* Icon */}
+                  <div className="exp-icon">
+                    {exp.icon}
+                  </div>
+
+                  {/* Content */}
+                  <h3 className="exp-title">{exp.company.split(':')[0]}</h3>
+                  <p className="exp-role">{exp.role}</p>
+                  <p className="exp-description">{exp.description}</p>
+
+                  {/* Skills */}
+                  <div className="exp-skills-container">
+                    {exp.skills.map((skill, i) => (
+                      <span key={i} className="exp-skill-tag">{skill}</span>
+                    ))}
+                  </div>
+
+                  {/* View Details button for Pi-Tamagotchi */}
+                  {exp.hasDetails && (
                     <button
-                      onClick={() => setShowPiTamagotchi(true)}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setShowPiTamagotchi(true);
+                      }}
                       className="view-details-button"
+                      style={{ marginTop: '15px', marginLeft: '0' }}
                     >
                       View Details →
                     </button>
                   )}
-                </h4>
-                <p className="timeline-description">{exp.description}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -330,24 +370,6 @@ const AboutMe = () => {
           </div>
         </section>
 
-        {/* Interests Section */}
-        <section id="interests" className="section">
-          <h2 className="section-title gradient-text">Beyond Work</h2>
-
-          <div className="interests-grid">
-            {personalInfo.interests.map((interest, index) => (
-              <div key={index} className="interest-card">
-                <span className="interest-icon">{interest.icon}</span>
-                <span className="interest-name">{interest.name}</span>
-              </div>
-            ))}
-          </div>
-
-          <div className="interests-note">
-            <p>When I'm not working, you'll find me exploring these passions and discovering new ones. I believe in a balanced life that fuels creativity and innovation in all areas.</p>
-          </div>
-        </section>
-
         {/* Contact Section */}
         <section id="contact" className="section">
           <h2 className="section-title gradient-text">Get In Touch</h2>
@@ -367,7 +389,6 @@ const AboutMe = () => {
               <span className="contact-icon">gh</span>
               <span>GitHub</span>
             </a>
-
           </div>
 
           <div className="contact-note">
