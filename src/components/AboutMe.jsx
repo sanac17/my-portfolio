@@ -44,9 +44,9 @@ const AboutMe = () => {
       {
         id: 1,
         year: "April 2025 - May 2025",
-        role: "Team Member",
-        company: "Sign Language Glove: Class Project",
-        description: "Created a glove that can detect ASL alphabets.",
+        role: "Lead Developer",
+        company: "ASL Interpreter: Class Project",
+        description: "Designed and developed a glove that can detect ASL alphabets.",
         icon: "🧤",
         className: "exp-1",
         skills: ["Hardware", "Signal Processing", "Sensors", "Accessibility"],
@@ -65,7 +65,7 @@ const AboutMe = () => {
       {
         id: 3,
         year: "April 2024 - May 2024",
-        role: "Team Member",
+        role: "Lead Developer",
         company: "Pi-Tamagotchi: Class project",
         description: "Developed a Tamagotchi inspired game on a Raspberry Pi using Python.",
         icon: "🎮",
