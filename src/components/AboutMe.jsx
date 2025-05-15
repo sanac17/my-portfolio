@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import './AboutMe.css';
 
+
 const AboutMe = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [activeSkill, setActiveSkill] = useState(null);
@@ -34,11 +35,7 @@ const AboutMe = () => {
   // Your personal information - customize this
   const personalInfo = {
     name: "Sana Chawla",
-    bio: "I am an undergraduate Computer Science and ECE student. \
-    I'm passionate about developing innovative solutions at the intersection of software and hardware systems. \
-    My academic journey has equipped me with strong foundations in programming, computer architecture, and \
-    embedded systems design. Outside of my technical pursuits, \
-    I find balance through music, outdoor adventures, and following Formula 1 racing.",
+    bio: "I’m currently a Computer Science and ECE student passionate about building technology that bridges hardware and software. I enjoy working on embedded systems, architecture, and systems design. Outside class, you’ll find me exploring music, the outdoors, or Formula 1.",
 
     experience: [
       {
@@ -259,20 +256,24 @@ const AboutMe = () => {
       <div className="container">
         {/* Intro Section */}
         <section id="intro" className="section">
-          <div className="intro-content">
-            <div className="profile-container">
-              <img
-                src={process.env.PUBLIC_URL + '/IMG_0980.JPG'}
-                alt="Sana Chawla"
-                className="profile-image"
-              />
-            </div>
-            <h1 className="name">{personalInfo.name}</h1>
-            <div className="name-underline"></div>
-            <h2 className="bio">{personalInfo.bio}</h2>
-
-            <div className="button-container">
-              <a href="#experience" className="button">Discover My Journey</a>
+          <div className="aboutme-landing">
+            <div className="aboutme-container">
+              <div className="aboutme-photo">
+                <img
+                  src={process.env.PUBLIC_URL + '/IMG_0980.JPG'}
+                  alt="Sana Chawla"
+                  className="aboutme-img"
+                />
+              </div>
+              <div className="aboutme-text">
+                <h1 className="aboutme-title">Hi, I'm Sana!</h1>
+                <p className="aboutme-description">
+                  I am currently a Computer Science and ECE student who enjoys working on embedded systems, architecture, and robotics projects.
+                </p>
+                <div className="button-container">
+                  <a href="#experience" className="button">Discover My Journey</a>
+                </div>
+              </div>
             </div>
           </div>
         </section>

@@ -701,6 +701,8 @@ body {
   color: #3b82f6;
 }
 
+
+
 /* Responsive design for mobile */
 @media screen and (max-width: 768px) {
   .timeline-vertical::after {
@@ -727,4 +729,63 @@ body {
     font-size: 0.8rem;
     padding: 6px 12px;
   }
+}
+
+.aboutme-landing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  padding: 60px 20px;
+  background-color: #f8fafc;
+}
+
+.aboutme-container {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  max-width: 1100px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.aboutme-photo {
+  flex: 1;
+  min-width: 320px;
+  max-width: 420px;
+}
+
+.aboutme-img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+  aspect-ratio: 3 / 4;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+}
+
+.aboutme-text {
+  flex: 1.2;
+  min-width: 320px;
+}
+
+.aboutme-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #4f46e5, #10b981);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.aboutme-description {
+  font-size: 1.2rem;
+  color: #475569;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.button-container {
+  margin-top: 10px;
 }
