@@ -268,7 +268,8 @@ const AboutMe = () => {
               <div className="aboutme-text">
                 <h1 className="aboutme-title">Hi, I'm Sana!</h1>
                 <p className="aboutme-description">
-                  I am currently a Computer Science and ECE student who enjoys working on embedded systems, architecture, and robotics projects.
+                  I am currently a Computer Science and ECE senior at Cornell University.
+                  I enjoys working on embedded software, computer architecture, and robotics projects. I will be pursuing my MEng in CS from Cornell University.
                 </p>
                 <div className="button-container">
                   <a href="#experience" className="button">Discover My Journey</a>
